@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>reillyl.com</title>
+  <meta name="description" content="The home of Reilly — projects, games, and more." />
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --bg-glow: #14304a;
+      --card: #141821;
+      --card-border: #232a37;
+      --text: #e8ecf3;
+      --muted: #9aa4b6;
+      --accent: #f5b642;
+      --accent-2: #7c5cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, var(--bg-glow), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .brand {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(120deg, #fff, #b9c4d8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      margin-top: 12px;
+      max-width: 480px;
+    }
+    .grid {
+      margin-top: 48px;
+      display: grid;
+      gap: 20px;
+      width: 100%;
+      max-width: 420px;
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-align: left;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px -12px rgba(245, 182, 66, 0.4);
+    }
+    .card .emoji { font-size: 2.2rem; line-height: 1; }
+    .card .title { font-size: 1.25rem; font-weight: 700; }
+    .card .desc { color: var(--muted); font-size: 0.9rem; margin-top: 3px; }
+    .card .arrow { margin-left: auto; color: var(--accent); font-size: 1.4rem; }
+    footer {
+      margin-top: 56px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="brand">reillyl</h1>
+  <p class="tagline">Welcome. Pick a door and step inside.</p>
+
+  <main class="grid">
+    <a class="card" href="https://dungeons.reillyl.com">
+      <span class="emoji">⚔️</span>
+      <span>
+        <div class="title">Dungeon Legends</div>
+        <div class="desc">Battle through the dungeon. Play now.</div>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+  </main>
+
+  <footer>© <span id="year"></span> reillyl.com</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
